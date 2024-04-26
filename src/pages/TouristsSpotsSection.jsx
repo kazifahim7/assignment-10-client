@@ -19,7 +19,7 @@ const TouristsSpotsSection = () => {
     setTimeout(() => {
         setLoader(false)
         setDataInUi(true)
-    }, 5000)
+    }, 6000)
 
 
 
@@ -38,7 +38,7 @@ const TouristsSpotsSection = () => {
 
             <div className={`max-w-7xl pt-10 mx-auto gap-10 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 ${dataInUI ? 'block' : 'hidden'}`}>
                 {
-                    data.map(spot => <Card key={spot._id} spot={spot}></Card>)
+                    data.slice(0,6).map(spot => <Card key={spot._id} spot={spot}></Card>)
                 }
             </div>
 

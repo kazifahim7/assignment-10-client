@@ -1,6 +1,7 @@
 import { Outlet, useNavigation } from "react-router-dom";
 import Nav from "../shareComponents/Nav";
 import Footer from "../shareComponents/Footer";
+import 'react-tooltip/dist/react-tooltip.css';
 
 const Root = () => {
     const navigation=useNavigation()

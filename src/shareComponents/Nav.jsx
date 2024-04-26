@@ -7,6 +7,10 @@ import { signOut } from "firebase/auth";
 import auth from "../firebase/firebase.config";
 import { ToastContainer, toast } from "react-toastify";
 import 'react-toastify/dist/ReactToastify.css';
+import { Tooltip } from 'react-tooltip'
+import 'react-tooltip/dist/react-tooltip.css';
+
+
 
 
 const Nav = () => {
@@ -75,15 +79,20 @@ const Nav = () => {
                 </div>
                 <div className="navbar-end space-x-5">
 
-                    <div className="avatar">
+                    <div className="avatar my-anchor-element">
+                       
+                        
                         <div className="w-12">
                             <img src={user ? user.photoURL :"https://i.ibb.co/1vLZRYc/307ce493-b254-4b2d-8ba4-d12c080d6651.jpg"} className="rounded-full" />
 
                         </div>
+                        
                     </div>
 
 
-
+                    <Tooltip style={{ backgroundColor: "rgb(0, 255, 30)", color: "#222" }} anchorSelect=".my-anchor-element" place="left">
+                        {user && user.displayName} 
+                    </Tooltip>
 
 
 
