@@ -6,7 +6,7 @@ import Slider from "./Slider";
 const Banner = () => {
     return (
         <div>
-            <div className="flex items-center flex-col-reverse lg:flex-row-reverse ">
+            <div className="flex items-center flex-col-reverse lg:flex-row-reverse text-green-50 bg-[#0a2233] ">
                 <div className="p-10">
                     <Slider></Slider>
 

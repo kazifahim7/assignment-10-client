@@ -5,6 +5,7 @@ import HOme from "../pages/HOme";
 import LogIn from "../pages/LogIn";
 import Register from "../pages/Register";
 import TouristsSpot from "../pages/TouristsSpot";
+import Private from "../privateRoutes/PrivateRoutes";
 
 const router = createBrowserRouter([
     {
@@ -26,7 +27,7 @@ const router = createBrowserRouter([
             },
             {
                 path: '/TouristsSpot',
-                element:<TouristsSpot></TouristsSpot>,
+                element: <Private><TouristsSpot></TouristsSpot></Private>,
             }
         ]
     },

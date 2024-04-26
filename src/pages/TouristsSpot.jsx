@@ -1,4 +1,6 @@
 import { useRef } from "react";
+import Swal from 'sweetalert2'
+import 'sweetalert2/src/sweetalert2.scss'
 
 const TouristsSpot = () => {
     const nameRef=useRef()
@@ -41,6 +43,40 @@ const TouristsSpot = () => {
 
         console.log(data)
 
+        fetch('http://localhost:5000/spots',{
+            method : 'POST',
+            headers : {
+                'content-type':'application/json'
+            },
+            body:JSON.stringify(data)
+        })
+        .then(res=>res.json())
+        .then(data=>{
+            
+            console.log(data)
+            if (data.insertedId){
+                Swal.fire({
+                    title: "Good job!",
+                    text: "added!",
+                    icon: "success"
+                });
+
+                e.target.reset()
+
+            }
+
+            else{
+                Swal.fire({
+                    icon: "error",
+                    title: "Oops...",
+                    text: "Something went wrong!",
+                });
+            }
+        
+        })
+
+
+
 
 
 
@@ -59,7 +95,7 @@ const TouristsSpot = () => {
             <form  onSubmit={dataAdd} className="w-full grid md:grid-cols-1 lg:grid-cols-2 gap-4 border p-5 rounded-2xl" >
                 <div className="form-control">
                     <label className="label">
-                        <span className="label-text">Name</span>
+                        <span className="label-text">User Name</span>
                     </label>
                     <input ref={nameRef} type="text" name="name" placeholder="name" className="input input-bordered" required />
                 </div>
@@ -67,7 +103,7 @@ const TouristsSpot = () => {
                     <label className="label">
                         <span className="label-text">Email</span>
                     </label>
-                    <input ref={emailRef} type="email" placeholder="email" className="input input-bordered" required />
+                    <input ref={emailRef} type="email" placeholder="enter your current email" className="input input-bordered" required />
                 </div>
                 <div className="form-control">
                     <label className="label">
@@ -103,7 +139,7 @@ const TouristsSpot = () => {
                     <label className="label">
                         <span className="label-text">seasonality</span>
                     </label>
-                    <input type="text" name="seasonality" placeholder="seasonality" className="input input-bordered" required />
+                    <input type="text" name="seasonality" placeholder="season name" className="input input-bordered" required />
                 </div>
                 <div className="form-control">
                     <label className="label">

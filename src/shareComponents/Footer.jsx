@@ -1,12 +1,12 @@
 const Footer = () => {
     return (
         <div>
-            <footer className="footer p-10 bg-base-200 text-base-content">
+            <footer className="footer p-10  bg-[#0a2233] text-white">
                 <aside>
-                    <img src="https://gaviaspreview.com/wp/tevily/wp-content/themes/tevily/assets/images/logo-mobile.png" alt="" />
-                    <p>Tevily Industries Ltd.<br />Providing reliable tech since 1992</p>
+                    <img src="https://trendytraveldv.wpengine.com/wp-content/themes/trendytravel/images/logo.png" alt="" />
+                    <p>trendy travel Industries Ltd.<br />Providing reliable tech since 1992</p>
                     <aside>
-                        <p>Copyright © 2024 - All right reserved by Tevily Industries Ltd</p>
+                        <p>Copyright © 2024 - All right reserved by trendy travel Industries Ltd</p>
                     </aside>
                 </aside>
                 <nav>

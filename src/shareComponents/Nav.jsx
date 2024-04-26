@@ -49,7 +49,7 @@ const Nav = () => {
 
     return (
         <div className="">
-            <div className="navbar">
+            <div className="navbar bg-[#0a2233] text-white">
                 <div className="navbar-start">
                     <div className="dropdown">
                         <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
@@ -62,7 +62,7 @@ const Nav = () => {
                             <NavLink to={'/List'}>My List</NavLink>
                         </ul>
                     </div>
-                    <img src="https://gaviaspreview.com/wp/tevily/wp-content/themes/tevily/assets/images/logo-mobile.png" className=" h-5 lg:h-10" alt="" />
+                    <img src="https://trendytraveldv.wpengine.com/wp-content/themes/trendytravel/images/logo.png" className=" h-5 lg:h-16" alt="" />
 
                 </div>
                 <div className="navbar-center hidden lg:flex">
@@ -109,7 +109,7 @@ const Nav = () => {
                     </label>
 
                     {
-                        user ? <Link onClick={logOUt} className="btn bg-[#e8604c]">LogOut</Link> : <Link to={'/login'} className="btn bg-[#e8604c]">LogIn</Link>
+                        user ? <Link onClick={logOUt} className="btn border-none bg-[#e8604c]">LogOut</Link> : <Link to={'/login'} className="btn bg-[#e8604c] border-none">LogIn</Link>
                     }
 
                     <ToastContainer></ToastContainer>
