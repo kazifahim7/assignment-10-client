@@ -5,8 +5,8 @@ const Card = ({spot}) => {
     return (
         <div>
             <div className="card w-full h-full bg-base-100 shadow-xl">
-                <figure><img src={spot.image} alt="Shoes" /></figure>
-                <div className="card-body">
+                <figure><img src={spot.image} alt="image" className="h-44 w-full" /></figure>
+                <div className="card-body text-gray-600">
                     <h2 className="card-title">tourists_spot_name : {spot.tourists_spot_name} </h2>
                     <p>Average_cost : {spot.average_cost} </p>
                     <p>TotalVisitorsPerYear :{spot.totalVisitorsPerYear} </p>
