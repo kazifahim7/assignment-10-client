@@ -1,6 +1,6 @@
 # Trendy Travel
 
-Welcome to [Trendy Travel], your ultimate destination for exploring the wonders of the world!
+Welcome to Trendy Travel, your ultimate destination for exploring the wonders of the world!
 
 **Live Site URL:** [Add URL Here]
 
@@ -18,7 +18,7 @@ Trendy Travel is a comprehensive platform designed to help travelers discover, p
 
 ## Getting Started
 
-To get started with [Website Name], simply visit our live site at [URL] and start exploring! Sign up for an account to unlock additional features and personalize your travel experience.
+To get started with Trendy Travel, simply visit our live site at [URL] and start exploring! Sign up for an account to unlock additional features and personalize your travel experience.
 
 ## Feedback
 
