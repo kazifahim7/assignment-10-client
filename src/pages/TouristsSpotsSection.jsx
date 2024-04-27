@@ -5,7 +5,7 @@ import { Cursor, useTypewriter } from 'react-simple-typewriter'
 
 const TouristsSpotsSection = () => {
     const [text] = useTypewriter({
-        words: ['Spots' ,'Section'],
+        words: ['Spots', 'Section'],
         loop: {}
     })
 
@@ -17,7 +17,7 @@ const TouristsSpotsSection = () => {
     const [loader, setLoader] = useState(true)
     const [dataInUI, setDataInUi] = useState(false)
     useEffect(() => {
-        fetch('http://localhost:5000/spots')
+        fetch('https://server-site-mu-seven.vercel.app/spots')
             .then(res => res.json())
             .then(data => setData(data))
     }, [])
@@ -31,22 +31,22 @@ const TouristsSpotsSection = () => {
     return (
         <div className="my-5">
 
-            
-            
-           
-                <h1 className="font-extrabold text-5xl text-center">
-                    
-                    Tourists 
-                    <span className="text-green-600">
+
+
+
+            <h1 className="font-extrabold text-5xl text-center">
+
+                Tourists
+                <span className="text-green-600">
                     {text}
                     <Cursor cursorColor='green' />
 
-                    </span>
-                    
-                    
-                    </h1>
+                </span>
 
-            
+
+            </h1>
+
+
 
 
 
@@ -63,7 +63,7 @@ const TouristsSpotsSection = () => {
 
             <div className={`max-w-7xl pt-10 mx-auto gap-10 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 ${dataInUI ? 'block' : 'hidden'}`}>
                 {
-                    data.slice(0,6).map(spot => <Card key={spot._id} spot={spot}></Card>)
+                    data.slice(0, 6).map(spot => <Card key={spot._id} spot={spot}></Card>)
                 }
             </div>
 

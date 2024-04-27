@@ -3,28 +3,28 @@ import { AuthContext } from "../Authprovider/AuthProvider";
 import TableInfo from "./TableInfo";
 
 const MyListPage = () => {
-    const {user}=useContext(AuthContext)
+    const { user } = useContext(AuthContext)
     console.log(user.email)
 
-    
-
-    const [ownList,setOwnList]=useState([])
-    useEffect(()=>{
-        fetch('http://localhost:5000/spots')
-        .then(res=>res.json())
-        .then(data=>{
-
-            const remain =data.filter(item=>item.email == user?.email)  
 
 
-            
-        setOwnList(remain)
-        })
+    const [ownList, setOwnList] = useState([])
+    useEffect(() => {
+        fetch('https://server-site-mu-seven.vercel.app/spots')
+            .then(res => res.json())
+            .then(data => {
+
+                const remain = data.filter(item => item.email == user?.email)
 
 
 
-    },[user?.email])
-    
+                setOwnList(remain)
+            })
+
+
+
+    }, [user?.email])
+
 
 
 
@@ -50,7 +50,7 @@ const MyListPage = () => {
             }
 
 
-           
+
 
 
 
@@ -68,7 +68,7 @@ const MyListPage = () => {
                         </tr>
                     </thead>
                     <tbody>
-                        
+
 
                         {
                             ownList.map(item => <TableInfo setOwnList={setOwnList} ownList={ownList} key={item._id} item={item}></TableInfo>)
@@ -76,9 +76,9 @@ const MyListPage = () => {
 
 
 
-                        
-                        
-                       
+
+
+
                     </tbody>
                 </table>
             </div>
@@ -88,7 +88,7 @@ const MyListPage = () => {
 
 
 
-            
+
         </div>
     );
 };

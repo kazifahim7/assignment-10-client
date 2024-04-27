@@ -3,14 +3,14 @@ import CountryCard from "./CountryCard";
 
 
 const Countries = () => {
-    const [country,setCountry]=useState([])
-    useEffect(()=>{
-        fetch('http://localhost:5000/country')
-        .then(res=>res.json())
-        .then(data=>setCountry(data))
+    const [country, setCountry] = useState([])
+    useEffect(() => {
+        fetch('https://server-site-mu-seven.vercel.app/country')
+            .then(res => res.json())
+            .then(data => setCountry(data))
 
 
-    },[])
+    }, [])
 
 
 
@@ -27,7 +27,7 @@ const Countries = () => {
                     country.map(item => <CountryCard item={item} key={item.id}></CountryCard>)
                 }
             </div>
-            
+
         </div>
     );
 };

@@ -15,33 +15,33 @@ import Bangladesh from "../country/Bangladesh";
 const router = createBrowserRouter([
     {
         path: "/",
-        errorElement:<Error></Error>,
+        errorElement: <Error></Error>,
         element: <Root></Root>,
-        children:[
+        children: [
             {
-                path : '/',
-                element:<HOme></HOme>
+                path: '/',
+                element: <HOme></HOme>
             },
             {
-                path : '/login',
-                element:<LogIn></LogIn>
+                path: '/login',
+                element: <LogIn></LogIn>
             },
             {
-                path:'/register',
-                element:<Register></Register>
+                path: '/register',
+                element: <Register></Register>
             },
             {
                 path: '/TouristsSpot',
                 element: <Private><TouristsSpot></TouristsSpot></Private>,
             },
             {
-                path : '/spots/:id',
+                path: '/spots/:id',
                 element: <Private><CardDetails></CardDetails></Private>,
-                loader: ({params }) => fetch(`http://localhost:5000/spots/${params.id}`)
+                loader: ({ params }) => fetch(`https://server-site-mu-seven.vercel.app/spots/${params.id}`)
             },
             {
                 path: '/AllTourists',
-                element:<AllSpots></AllSpots>
+                element: <AllSpots></AllSpots>
             },
             {
                 path: '/List',
@@ -49,13 +49,13 @@ const router = createBrowserRouter([
             },
             {
                 path: '/update/:id',
-                element:<UpdateData></UpdateData>,
-                loader: ({ params }) => fetch(`http://localhost:5000/spots/${params.id}`)
+                element: <UpdateData></UpdateData>,
+                loader: ({ params }) => fetch(`https://server-site-mu-seven.vercel.app/spots/${params.id}`)
             },
             {
                 path: '/country/:id',
-                element:<Bangladesh></Bangladesh>,
-                loader: ({params }) => fetch(`http://localhost:5000/country/${params.id}`)
+                element: <Bangladesh></Bangladesh>,
+                loader: ({ params }) => fetch(`https://server-site-mu-seven.vercel.app/country/${params.id}`)
             }
 
         ]

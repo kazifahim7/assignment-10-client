@@ -4,7 +4,7 @@ import 'sweetalert2/src/sweetalert2.scss'
 
 
 const UpdateData = () => {
-    const latestData=useLoaderData()
+    const latestData = useLoaderData()
     const dataUPdate = e => {
         e.preventDefault()
         const image = e.target.image.value;
@@ -19,7 +19,7 @@ const UpdateData = () => {
         const totalVisitorsPerYear = e.target.totalVisitorsPerYear.value;
         const description = e.target.short_description.value;
         const data = {
-            
+
             image,
             tourists_spot_name,
             country,
@@ -31,26 +31,26 @@ const UpdateData = () => {
             description
         }
         console.log(data)
-        fetch(`http://localhost:5000/spots/${latestData?._id}`,{
-            method:"PUT",
-            headers:{
+        fetch(`https://server-site-mu-seven.vercel.app/spots/${latestData?._id}`, {
+            method: "PUT",
+            headers: {
                 'content-type': 'application/json'
             },
-            body:JSON.stringify(data)
+            body: JSON.stringify(data)
         })
-        .then(res=>res.json())
-        .then(data=>{
-            if (data.modifiedCount>0){
-                Swal.fire({
-                    title: "Good job!",
-                    text: "added!",
-                    icon: "success"
-                });
+            .then(res => res.json())
+            .then(data => {
+                if (data.modifiedCount > 0) {
+                    Swal.fire({
+                        title: "Good job!",
+                        text: "added!",
+                        icon: "success"
+                    });
 
-                e.target.reset()
+                    e.target.reset()
 
-            }
-        })
+                }
+            })
 
 
 
@@ -79,7 +79,7 @@ const UpdateData = () => {
                     <label className="label">
                         <span className="label-text">tourists_spot_name</span>
                     </label>
-                    <input type="text" name="tourists_spot_name"  defaultValue={latestData.tourists_spot_name} className="input input-bordered" required />
+                    <input type="text" name="tourists_spot_name" defaultValue={latestData.tourists_spot_name} className="input input-bordered" required />
                 </div>
                 <div className="form-control">
                     <label className="label">
@@ -91,8 +91,8 @@ const UpdateData = () => {
                     <label className="label">
                         <span className="label-text">location</span>
                     </label>
-                    <input type="text" name="location" 
-                    defaultValue={latestData.location} placeholder="" className="input input-bordered" required />
+                    <input type="text" name="location"
+                        defaultValue={latestData.location} placeholder="" className="input input-bordered" required />
                 </div>
                 <div className="form-control">
                     <label className="label">
@@ -132,7 +132,7 @@ const UpdateData = () => {
 
 
             </form>
-            
+
         </div>
     );
 };

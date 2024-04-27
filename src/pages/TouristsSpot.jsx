@@ -3,18 +3,18 @@ import Swal from 'sweetalert2'
 import 'sweetalert2/src/sweetalert2.scss'
 
 const TouristsSpot = () => {
-    const nameRef=useRef()
-    const emailRef=useRef()
+    const nameRef = useRef()
+    const emailRef = useRef()
 
 
 
 
 
-    const dataAdd=e=>{
+    const dataAdd = e => {
         e.preventDefault()
 
-        const name =nameRef.current.value;
-        const email=emailRef.current.value;
+        const name = nameRef.current.value;
+        const email = emailRef.current.value;
         const image = e.target.image.value;
         const tourists_spot_name = e.target.tourists_spot_name.value;
         const country_Name = e.target.country_Name.value;
@@ -27,7 +27,7 @@ const TouristsSpot = () => {
         const totalVisitorsPerYear = e.target.totalVisitorsPerYear.value;
         const description = e.target.short_description.value;
 
-        const data={
+        const data = {
             name,
             email,
             image,
@@ -43,31 +43,31 @@ const TouristsSpot = () => {
 
         console.log(data)
 
-        fetch('http://localhost:5000/spots',{
-            method : 'POST',
-            headers : {
-                'content-type':'application/json'
+        fetch('https://server-site-mu-seven.vercel.app/spots', {
+            method: 'POST',
+            headers: {
+                'content-type': 'application/json'
             },
-            body:JSON.stringify(data)
+            body: JSON.stringify(data)
         })
-        .then(res=>res.json())
-        .then(data=>{
-            
-            console.log(data)
-            if (data.insertedId){
-                Swal.fire({
-                    title: "Good job!",
-                    text: "added!",
-                    icon: "success"
-                });
+            .then(res => res.json())
+            .then(data => {
 
-                e.target.reset()
+                console.log(data)
+                if (data.insertedId) {
+                    Swal.fire({
+                        title: "Good job!",
+                        text: "added!",
+                        icon: "success"
+                    });
 
-            }
+                    e.target.reset()
 
-            
-        
-        })
+                }
+
+
+
+            })
 
 
 
@@ -86,7 +86,7 @@ const TouristsSpot = () => {
 
 
 
-            <form  onSubmit={dataAdd} className="w-full grid md:grid-cols-1 lg:grid-cols-2 gap-4 border p-5 rounded-2xl" >
+            <form onSubmit={dataAdd} className="w-full grid md:grid-cols-1 lg:grid-cols-2 gap-4 border p-5 rounded-2xl" >
                 <div className="form-control">
                     <label className="label">
                         <span className="label-text">User Name</span>
@@ -150,15 +150,15 @@ const TouristsSpot = () => {
                 <label className="form-control lg:col-span-2">
                     <div className="label">
                         <span className="label-text">short description</span>
-                        
+
                     </div>
                     <textarea name="short_description" className="textarea textarea-bordered h-24" placeholder="short description"></textarea>
                 </label>
 
 
                 <button className="btn bg-[#e8604c] lg:col-span-2">ADD</button>
-               
-                
+
+
 
 
 
@@ -172,7 +172,7 @@ const TouristsSpot = () => {
 
 
 
-            
+
         </div>
     );
 };
