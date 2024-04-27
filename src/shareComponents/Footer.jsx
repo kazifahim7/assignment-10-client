@@ -1,3 +1,7 @@
+import { FaGoogle } from "react-icons/fa";
+import { FaFacebook } from "react-icons/fa";
+import { FaTwitter } from "react-icons/fa";
+
 const Footer = () => {
     return (
         <div>
@@ -6,6 +10,13 @@ const Footer = () => {
                     <img src="https://trendytraveldv.wpengine.com/wp-content/themes/trendytravel/images/logo.png" alt="" />
                     <p>trendy travel Industries Ltd.<br />Providing reliable tech since 1992</p>
                     <aside>
+                        <div className="flex justify-start space-x-7 py-5 text-3xl ">
+                            <FaGoogle></FaGoogle>
+                            <FaFacebook></FaFacebook>
+                            <FaTwitter></FaTwitter>
+                        </div>
+
+                        
                         <p>Copyright © 2024 - All right reserved by trendy travel Industries Ltd</p>
                     </aside>
                 </aside>

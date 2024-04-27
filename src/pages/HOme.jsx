@@ -1,6 +1,7 @@
 import Banner from "./Banner";
 import Client from "./Client";
 import Countries from "./Countries";
+import MoreSpots from "./MoreSpots";
 import TouristsSpotsSection from "./TouristsSpotsSection";
 
 
@@ -11,6 +12,7 @@ const HOme = () => {
             <TouristsSpotsSection></TouristsSpotsSection>
             <Countries></Countries>
             <Client></Client>
+            <MoreSpots></MoreSpots>
         </div>
     );
 };
