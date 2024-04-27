@@ -111,11 +111,17 @@ const TouristsSpot = () => {
                     </label>
                     <input type="text" name="tourists_spot_name" placeholder="tourists_spot_name" className="input input-bordered" required />
                 </div>
-                <div className="form-control">
-                    <label className="label">
-                        <span className="label-text">country_Name</span>
-                    </label>
-                    <input type="text" name="country_Name" placeholder="country_Name" className="input input-bordered" required />
+                <div className="mt-3">
+                    seasonality
+                    <select name="seasonality" className="select  select-bordered w-full ">
+                        <option disabled selected>seasonality</option>
+                        <option>summer</option>
+                        <option>rainy</option>
+                        <option>autumn</option>
+                        <option>late-autumn</option>
+                        <option>winter</option>
+                        <option>spring</option>
+                    </select>
                 </div>
                 <div className="form-control">
                     <label className="label">
@@ -129,11 +135,17 @@ const TouristsSpot = () => {
                     </label>
                     <input type="number" name="average_cost" placeholder="average_cost" className="input input-bordered" required />
                 </div>
-                <div className="form-control">
-                    <label className="label">
-                        <span className="label-text">seasonality</span>
-                    </label>
-                    <input type="text" name="seasonality" placeholder="season name" className="input input-bordered" required />
+                <div className="mt-3">
+                    country
+                    <select name="country_Name" className="select  select-bordered w-full ">
+                        <option disabled selected>country</option>
+                        <option>Bangladesh</option>
+                        <option>Thailand</option>
+                        <option>Indonesia</option>
+                        <option>Malaysia</option>
+                        <option>Vietnam</option>
+                        <option>Cambodia</option>
+                    </select>
                 </div>
                 <div className="form-control">
                     <label className="label">

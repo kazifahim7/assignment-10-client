@@ -10,19 +10,22 @@ import { ToastContainer, toast as showToast } from 'react-toastify';
 
 
 import 'react-toastify/dist/ReactToastify.css';
-import { GithubAuthProvider, GoogleAuthProvider, signInWithEmailAndPassword, signInWithPopup } from "firebase/auth";
+import { GithubAuthProvider, signInWithEmailAndPassword, signInWithPopup } from "firebase/auth";
 import auth from "../firebase/firebase.config";
-import { useState } from "react";
+import { useContext, useState } from "react";
 import { useLocation } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
+import { AuthContext } from "../Authprovider/AuthProvider";
 
 const Login = () => {
 
-    const provider = new GoogleAuthProvider();
+    // const provider = new GoogleAuthProvider();
     const gitProvider = new GithubAuthProvider();
     const [display, setDisplay] = useState(false);
     const location = useLocation()
     const navigate = useNavigate()
+
+    const { googleLogIN }=useContext(AuthContext)
 
 
 
@@ -56,6 +59,7 @@ const Login = () => {
 
             })
             .catch(() => {
+
                 if (!showToast.isActive(13, "friendRequest")) {
                     console.log("first time running")
                     showToast('please enter a valid information', {
@@ -74,7 +78,8 @@ const Login = () => {
 
 
     const googleLogIn = () => {
-        signInWithPopup(auth, provider)
+        // signInWithPopup(auth, provider)
+            googleLogIN()
             .then(() => {
                 if (!showToast.isActive(13, "friendRequest")) {
                     console.log("first time running")
@@ -90,7 +95,11 @@ const Login = () => {
                 navigate(location?.state ? location.state : '/')
 
             })
-            .catch(() => showToast.warning('invalid information'))
+            .catch((error) => {
+                
+                console.log(error)
+                showToast.warning('invalid information')
+            })
 
     }
 

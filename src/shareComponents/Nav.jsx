@@ -15,7 +15,7 @@ import 'react-tooltip/dist/react-tooltip.css';
 
 const Nav = () => {
     const {user}=useContext(AuthContext)
-    console.log(user)
+    
 
 
     const [theme, setTheme] = useState(localStorage.getItem('theme') ? localStorage.getItem('theme') : "light")
