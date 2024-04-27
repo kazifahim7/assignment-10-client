@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import Card from "./Card";
+import { Cursor, useTypewriter } from "react-simple-typewriter";
 
 
 const AllSpots = () => {
@@ -7,6 +8,11 @@ const AllSpots = () => {
     const [loader,setLoader]=useState(true)
     const [dataInUI,setDataInUi]=useState(false)
     const [text,setText]=useState('all')
+    const [texts] = useTypewriter({
+        words: ['spot'],
+        loop: {},
+        onLoopDone: () => console.log(`loop completed after 3 runs.`)
+    })
 
 
     useEffect(() => {
@@ -50,7 +56,15 @@ const AllSpots = () => {
 
     return (
         <div className="" >
-            <h1 className="text-5xl font-extrabold text-center">All Tourists Spot</h1>
+            <h1 className="text-5xl font-extrabold text-center">All tourists
+
+            <span className="text-red-400">
+                {texts}
+                    <Cursor cursorColor='red' />
+            </span>
+            
+            
+            </h1>
             <p className="text-center py-3">Are you hunting for the best tourist places in Southeast Asia <br />
                 that are sure to leave you stunned with their ethereal beauty?</p>
 

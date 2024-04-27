@@ -10,6 +10,7 @@ import CardDetails from "../pages/CardDetails";
 import AllSpots from "../pages/AllSpots";
 import MyListPage from "../pages/MyListPage";
 import UpdateData from "../pages/UpdateData";
+import Bangladesh from "../country/Bangladesh";
 
 const router = createBrowserRouter([
     {
@@ -50,6 +51,11 @@ const router = createBrowserRouter([
                 path: '/update/:id',
                 element:<UpdateData></UpdateData>,
                 loader: ({ params }) => fetch(`http://localhost:5000/spots/${params.id}`)
+            },
+            {
+                path: '/country/:id',
+                element:<Bangladesh></Bangladesh>,
+                loader: ({params }) => fetch(`http://localhost:5000/country/${params.id}`)
             }
 
         ]
