@@ -1,4 +1,4 @@
-# [Trendy Travel]
+# Trendy Travel
 
 Welcome to [Trendy Travel], your ultimate destination for exploring the wonders of the world!
 
@@ -6,7 +6,7 @@ Welcome to [Trendy Travel], your ultimate destination for exploring the wonders 
 
 ## About
 
-[Trendy Travel] is a comprehensive platform designed to help travelers discover, plan, and experience unforgettable journeys. Whether you're a seasoned globetrotter or a first-time adventurer, our website provides all the tools and resources you need to make the most of your travels.
+Trendy Travel is a comprehensive platform designed to help travelers discover, plan, and experience unforgettable journeys. Whether you're a seasoned globetrotter or a first-time adventurer, our website provides all the tools and resources you need to make the most of your travels.
 
 ## Features
 
