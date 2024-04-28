@@ -27,6 +27,55 @@ const Login = () => {
 
     const { googleLogIN }=useContext(AuthContext)
 
+    const handleGoogleLogIn = () => {
+        // signInWithPopup(auth, provider)
+        googleLogIN()
+            .then((res) => {
+                console.log(res.user)
+
+                if (!showToast.isActive(13, "friendRequest")) {
+                    console.log("first time running")
+                    showToast('Google log in success', {
+                        position: "top-right",
+                        autoClose: 3000,
+                        closeOnClick: true,
+                        draggable: false,
+                        type: "success",
+                        toastId: 13
+                    })
+                }
+                navigate(location?.state ? location.state : '/')
+
+            })
+            .catch((error) => {
+
+                console.log(error)
+                showToast.warning('invalid information')
+            })
+
+    }
+
+    const gitHubLogIn = () => {
+        signInWithPopup(auth, gitProvider)
+            .then(() => {
+                if (!showToast.isActive(13, "friendRequest")) {
+                    console.log("first time running")
+                    showToast('git-Hub  log in success', {
+                        position: "top-right",
+                        autoClose: 3000,
+                        closeOnClick: true,
+                        draggable: false,
+                        type: "success",
+                        toastId: 13
+                    })
+                }
+                navigate(location?.state ? location.state : '/')
+
+            })
+            .catch(() => showToast.warn('invalid information'))
+
+    }
+
 
 
     const userLogIn = e => {
@@ -77,52 +126,9 @@ const Login = () => {
     }
 
 
-    const googleLogIn = () => {
-        // signInWithPopup(auth, provider)
-            googleLogIN()
-            .then(() => {
-                if (!showToast.isActive(13, "friendRequest")) {
-                    console.log("first time running")
-                    showToast('Google log in success', {
-                        position: "top-right",
-                        autoClose: 3000,
-                        closeOnClick: true,
-                        draggable: false,
-                        type: "success",
-                        toastId: 13
-                    })
-                }
-                navigate(location?.state ? location.state : '/')
+ 
 
-            })
-            .catch((error) => {
-                
-                console.log(error)
-                showToast.warning('invalid information')
-            })
-
-    }
-
-    const gitHubLogIn = () => {
-        signInWithPopup(auth, gitProvider)
-            .then(() => {
-                if (!showToast.isActive(13, "friendRequest")) {
-                    console.log("first time running")
-                    showToast('git-Hub  log in success', {
-                        position: "top-right",
-                        autoClose: 3000,
-                        closeOnClick: true,
-                        draggable: false,
-                        type: "success",
-                        toastId: 13
-                    })
-                }
-                navigate(location?.state ? location.state : '/')
-
-            })
-            .catch(() => showToast.warn('invalid information'))
-
-    }
+ 
 
 
 
@@ -173,7 +179,7 @@ const Login = () => {
 
                         <div className="flex gap-2 flex-col  justify-center p-5 ">
 
-                            <button onClick={googleLogIn} className="btn btn-outline text-green-400">
+                            <button onClick={handleGoogleLogIn} className="btn btn-outline text-green-400">
                                 <FaGoogle></FaGoogle> LogIn with Google
                             </button>
                             <button onClick={gitHubLogIn} className="btn btn-outline btn-secondary ">
