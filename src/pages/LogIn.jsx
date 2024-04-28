@@ -10,7 +10,7 @@ import { ToastContainer, toast as showToast } from 'react-toastify';
 
 
 import 'react-toastify/dist/ReactToastify.css';
-import { GithubAuthProvider, signInWithEmailAndPassword, signInWithPopup } from "firebase/auth";
+import {  signInWithEmailAndPassword } from "firebase/auth";
 import auth from "../firebase/firebase.config";
 import { useContext, useState } from "react";
 import { useLocation } from "react-router-dom";
@@ -20,12 +20,12 @@ import { AuthContext } from "../Authprovider/AuthProvider";
 const Login = () => {
 
     // const provider = new GoogleAuthProvider();
-    const gitProvider = new GithubAuthProvider();
+    
     const [display, setDisplay] = useState(false);
     const location = useLocation()
     const navigate = useNavigate()
 
-    const { googleLogIN }=useContext(AuthContext)
+    const { googleLogIN, githubLogin }=useContext(AuthContext)
 
     const handleGoogleLogIn = () => {
         // signInWithPopup(auth, provider)
@@ -55,8 +55,8 @@ const Login = () => {
 
     }
 
-    const gitHubLogIn = () => {
-        signInWithPopup(auth, gitProvider)
+    const handleGitHubLogIn = () => {
+        githubLogin()
             .then(() => {
                 if (!showToast.isActive(13, "friendRequest")) {
                     console.log("first time running")
@@ -182,7 +182,7 @@ const Login = () => {
                             <button onClick={handleGoogleLogIn} className="btn btn-outline text-green-400">
                                 <FaGoogle></FaGoogle> LogIn with Google
                             </button>
-                            <button onClick={gitHubLogIn} className="btn btn-outline btn-secondary ">
+                            <button onClick={handleGitHubLogIn} className="btn btn-outline btn-secondary ">
                                 <FaGithub></FaGithub>  LogIn with gitHub
                             </button>
                         </div>

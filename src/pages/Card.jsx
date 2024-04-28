@@ -11,7 +11,7 @@ const Card = ({spot}) => {
                 <figure><img src={spot.image} alt="image" className="h-44 w-full" /></figure>
                 <div className={`card-body ${themes==='light'? "text-black":"text-white"}`}>
                     <h2 className="card-title">tourists_spot_name : {spot.tourists_spot_name} </h2>
-                    <p>Average_cost : {spot.average_cost} </p>
+                    <p>Average_cost : {spot.average_cost} $</p>
                     <p>TotalVisitorsPerYear :{spot.totalVisitorsPerYear} </p>
                     <p>Travel_time :{spot.travel_time} Days</p>
                     <p>Seasonality :{spot.seasonality} </p>
