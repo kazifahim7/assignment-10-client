@@ -15,7 +15,7 @@ const Banner = () => {
                     <h1 className="text-5xl text-[#f05f64] font-extrabold">Travel and Adventure</h1>
                     <p>Adventure.Travel is the go-to source for information on adventure travel that prioritizes sustainability, serves as a force for good, and transforms people and places. From research and trends to best travel practices, ideal gear, and destinations and operators with outstanding commitments to responsible travel, we have everything you need to make sure your adventures align with your values.</p>
                     <p className="text-2xl font-bold">Where would you Like to GO ?</p>
-                    <Link to={'/gallery'}><button className="btn w-full md:w-36 border-none bg-[#f85359]">All Tourists Spot</button></Link>
+                    <Link to={'/AllTourists'}><button className="btn w-full md:w-36 border-none bg-[#f85359]">All Tourists Spot</button></Link>
 
                 </div>
 

@@ -19,7 +19,7 @@ const CardDetails = () => {
         <div>
             <div className="hero min-h-screen bg-base-200">
                 <div className="hero-content flex-col lg:flex-row">
-                    <img src={singleData.image} className="max-w-sm rounded-lg shadow-2xl" />
+                    <img src={singleData.image} className="rounded-lg shadow-2xl" />
                     <div>
                         <h2 className="card-title">tourists_spot_name : {singleData.tourists_spot_name} </h2>
                         <p>Country : {singleData.country}</p>
